@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>RZK - razgovor sa neuronskom mrežom</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="http://www.dmi.rs">DMI.PMF.UNS.AC.RS</a></li>
+        <li><a href="/ddsr2.txt">KORPUS</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="http://www.dmi.rs">DMI.PMF.UNS.AC.RS</a></li>
+        <li><a href="/ddsr2.txt">KORPUS</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">RZK - razgovor sa neuronskom mrežom</h1>
+      <div class="row center">
+          <div class="input-field">
+            <input id="input_text" type="text">
+            <label for="input_text">Unesite pitanje ili poruku</label>
+          </div>
+      </div>
+      <div class="row center">
+        <a id="send-message" onclick="send()" class="btn-large waves-effect waves-light orange">Pošalji</a>
+	<br> <br> <br>
+	<div style="display: none;" class="loader center row"></div>
+      </div>
+      <div id="messages" style="display: none;" class="row center">
+	      <div class="row">
+		      <h6><strong>Pitanje: </strong> <span id="question"/></h6>
+	      </div>
+	      <div class="row">
+	      	      <h6><strong>Odgovor: </strong> <span id="answer" /></h6>
+	      </div> 
+	      <div class="row">
+		      <h6><strong>Vreme zahteva: </strong> <span id="time" /></h6>
+	      </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Šta je ovo?</h5>
+          <p class="grey-text text-lighten-4">
+	  	Na ovoj stranici moguće je "razgovarati" sa neuronskom mrežom. Neuronska mreža koristi 
+		arhitekturu opisanu u naučnom radu <a class="orange-text text-lighten-3" href="https://arxiv.org/abs/1506.05869">A Neural Conversation Model</a> 
+		koji je napisao Google Brain tim. Koriste se rekurentne neuronske mreže i seq2seq model. Podaci korišćeni za treniranje su
+		iz <a class="orange-text text-lighten-3" href="https://arxiv.org/abs/1710.03957">DailyDialog</a> korpusa koji je za potrebe
+		ovde preveden na srpski jezik. Ovaj projekat je nastao kao eksperiment iz predmeta Razvoj zasnovan na komponentama (RZK).
+	  </p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Trenutno opterećenje</h5>
+	  <ul>
+		  <li>CPU: <strong><span id="cpuusage"/></strong></li>
+		  <li>RAM: <strong><span id="ramusage"/></strong></li>
+		  <li>GPU RAM: <strong><span id="gpuusage"/></strong></li>
+		  <li>Korišćeni model: <strong><span id="usedmodel"/></strong></li>
+		  <li>Python 3.6, PyTorch 0.4.0, CUDA 9.1</li>
+	  </ul>
+       </div>
+       <div class="col l3 s12">
+         <h5 class="white-text">Kontakt</h5>
+	 <ul>
+		  <li><a class="orange-text text-lighten-5" href="mailto:nmilosev@dmi.rs">Nemanja Milošević</a></li>
+		  <li><a class="orange-text text-lighten-5" href="mailto:rackovic@dmi.rs">Miloš Racković</a></li>
+		  <li><a class="orange-text text-lighten-5" href="mailto:srdjan.skrbic@dmi.rs">Srđan Škrbić</a></li>
+		  <li class="orange-text text-lighten-5">Departman za matematiku i informatiku</li>
+		  <li class="orange-text text-lighten-5">Prirodno-matematički fakultet</li>
+		  <li class="orange-text text-lighten-5">Univerzitet u Novom Sadu</li>
+	 </ul>
+
+       </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      (c) <a class="orange-text text-lighten-3" href="mailto:nmilosev@dmi.rs">Nemanja Milošević</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/app.js"></script>
+
+  </body>
+</html>
